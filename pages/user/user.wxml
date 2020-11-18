@@ -1,0 +1,70 @@
+<view class="user_info_wrap">
+    <block wx:if="{{userInfo.length!==0}}">
+      <view class="userInfo">
+        <image class="userIcon" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+        <view class="userName">{{userInfo.nickName}}</view>
+      </view>  
+    </block>
+    <view class="btn_userInfo" wx:else>
+        <navigator url="/pages/login/login" open-type="navigate">登入账号</navigator>
+    </view>
+</view>
+
+<view class="user_content">
+    <view class="usermain">
+        <!-- 历史足迹 -->
+        <view class="history_wrap">
+            <navigator open-type="navigate">
+                <view class="his_num">0</view>
+                <view class="his_name">收藏的店铺</view>
+            </navigator>
+            <navigator open-type="navigate">
+                <view class="his_num">0</view>
+                <view class="his_name">收藏的商品</view>
+            </navigator>
+            <navigator open-type="navigate">
+                <view class="his_num">0</view>
+                <view class="his_name">关注的商品</view>
+            </navigator>
+            <navigator open-type="navigate">
+                <view class="his_num">0</view>
+                <view class="his_name">我的足迹</view>
+            </navigator>
+        </view>
+
+        <!-- 我的订单 -->
+        <view class="orders_wrap">
+            <view class="orders_title">我的订单</view>
+            <view class="orders_content">
+                <navigator open-type="navigate" url="/pages/order/order?type=1">
+                    <view class="iconfont icon-dingdan"></view>
+                    <view class="orders_name">全部订单</view>
+                </navigator>
+                <navigator open-type="navigate" url="/pages/order/order?type=2">
+                    <view class="iconfont icon-fukuantongzhi"></view>
+                    <view class="orders_name">待付款</view>
+                </navigator>
+                <navigator open-type="navigate" url="/pages/order/order?type=3">
+                    <view class="iconfont icon-shouhuodizhi"></view>
+                    <view class="orders_name">待收货</view>
+                </navigator>
+                <navigator open-type="navigate" url="/pages/order/order?type=4">
+                    <view class="iconfont icon-fenxiang"></view>
+                    <view class="orders_name">退款/退货</view>
+                </navigator>
+            </view>
+        </view>
+
+        <!-- 收货地址管理 -->
+        <view class="address_wrap">收货地址管理</view>
+
+        <!-- 联系客服 意见反馈 -->
+        <view class="app_info_wrap">
+            <view><button open-type="contact"></button>联系客服</view>
+            <view><button open-type="feedback"></button>意见反馈</view>
+            <view>关于我们</view>
+        </view>
+
+        <view class="Share_wrap"><button open-type="share"></button>把应用推荐给朋友</view>
+    </view>
+</view>

@@ -1,0 +1,36 @@
+<!-- 地址 -->
+<view class="address">
+    <view class="userinfo">
+        <view class="username">{{address.userName}}</view>
+        <view class="user_numb">{{address.telNumber}}</view>
+    </view>
+    <view class="address_info">{{address.provinceName+address.cityName+address.countyName+address.detailInfo}}</view>
+</view>
+<view class="title">商品列表</view>
+<!-- 商品列表 -->
+<view class="shopping" wx:for="{{goods_Pay}}" wx:key="goods_id">
+    <view class="goods_image_wrap">
+        <image src="{{item.goods_small_logo}}" mode="widthFix"></image>
+    </view>
+    
+    <view class="goods_right_wrap">
+        <view class="goods_title">{{item.goods_name}}</view>
+        <view class="goods_price_wrap">
+            <view class="goods_price">￥{{item.goods_price}}</view>
+            <view class="goods_num">×{{item.num}}</view>
+        </view>  
+    </view>
+</view>
+<!-- 底部 -->
+<view class="footer_tool">
+    <!-- 总价格 -->
+    <view class="total_price_wrap">
+        <view class="total_price">
+            合计：<text class="total_price_text">￥{{Price.totalPrice}}</text>
+        </view>
+        <view class="bh">包含运费</view>
+    </view>
+    <!-- 结算 -->
+    <view class="order_pay_wrap" bindtap="handlePay">支付（{{Price.totalNum}}）</view>
+</view>
+
